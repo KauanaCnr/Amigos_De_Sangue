@@ -1,0 +1,116 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode="ios">
+    <ion-title>Cadastra Campanha / Doação</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid fixed>
+    <form [formGroup]="cadastroForm">
+      <ion-row>
+        <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="12">
+          <ion-item class="box">
+            <ion-label position="floating">
+              Tipo
+            </ion-label>
+            <ion-select class="tamanhoFonteDinamicaInput" formControlName="campanhaDoacao" interface="popover">
+              <ion-select-option value="0">Doacao</ion-select-option>
+              <ion-select-option value="1">Campanha</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-row *ngIf="this.cadastroForm.controls['campanhaDoacao'].value == '1'">
+          <ion-col size-xs="12" size-sm="6" size-md="9" size-lg="9" size-xl="3">
+            <ion-item class="box">
+              <ion-label position="floating">
+                Nome Campanha
+              </ion-label>
+              <ion-input class="tamanhoFonteDinamicaInput" formControlName="tituloDoacao">
+              </ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size-xs="12" size-sm="6" size-md="9" size-lg="9" size-xl="3">
+            <ion-item class="box">
+              <ion-label position="floating">
+                Tipo Sanguineo
+              </ion-label>
+              <ion-input class="tamanhoFonteDinamicaInput" formControlName="tituloDoacao">
+              </ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-col size-xs="12" size-sm="6" size-md="4" size-lg="4" size-xl="3">
+          <ion-item class="box">
+            <ion-label position="floating">
+              Tipo Doação
+            </ion-label>
+            <ion-select class="tamanhoFonteDinamicaInput" formControlName="tipoDoacao" interface="popover">
+              <ion-select-option value="0">Sangue</ion-select-option>
+              <ion-select-option value="1">Medula</ion-select-option>
+            </ion-select>
+            <ion-input class="tamanhoFonteDinamicaInput" formControlName="tituloDoacao">
+            </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-sm="6" size-md="4" size-lg="4" size-xl="3">
+          <ion-item class="box">
+            <ion-label position="floating">
+              Cidade
+            </ion-label>
+            <ion-input class="tamanhoFonteDinamicaInput" formControlName="localConsulta" readonly>
+            </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-sm="6" size-md="4" size-lg="4" size-xl="4">
+          <ion-item class="box">
+            <ion-label position="floating">
+              Local Coleta
+            </ion-label>
+            <ion-input class="tamanhoFonteDinamicaInput" formControlName="nomeHemocentro" readonly>
+            </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-row>
+          <ion-col size-xs="6" size-sm="6" size-md="6" size-lg="6" size-xl="6">
+            <ion-item class="box">
+              <ion-label position="floating">
+                Data
+              </ion-label>
+              <ion-input class="tamanhoFonteDinamicaInput" formControlName="dataConsulta" type="date">
+              </ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size-xs="6" size-sm="6" size-md="6" size-lg="6" size-xl="6">
+            <ion-item class="box">
+              <ion-label position="floating">
+                Horario
+              </ion-label>
+              <ion-input class="tamanhoFonteDinamicaInput" formControlName="horarioConsulta">
+              </ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-row>
+    </form>
+
+  </ion-grid>
+</ion-content>
+<ion-toolbar>
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-no-padding">
+      <ion-col size="6" class="centralizarValoresColuna">
+        <ion-button (click)="cancela()" class="ion-text-wrap btn40" expand="block" color="danger" type="reset">
+          Cancelar
+        </ion-button>
+      </ion-col>
+      <ion-col size="6" class="centralizarValoresColuna">
+        <ion-button (click)="salvar()" class="ion-text-wrap btn40" expand="block" type="submit" color="success"
+          type="submit">
+          Salvar
+        </ion-button>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-toolbar>
+</ion-footer>

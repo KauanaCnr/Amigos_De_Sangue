@@ -1,0 +1,197 @@
+<ion-content class="ion-padding">
+  <ion-grid fixed>
+    <ion-row>
+
+      <div *ngIf="mostraTela === 'login'">
+
+        <ion-toolbar>
+          <ion-buttons (click)="fechar()" slot="start">
+            <ion-button>
+              <ion-icon color="laranja" name="arrow-back-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+        <img [src]="logo" class="tamanhoLogo2" *ngIf="logo !='data:image/png;base64,'">
+        <div class="inputTelaSite">
+          <form [formGroup]="loginForm" class="inputLogin2 ion-no-padding ajustaLogin" style="margin-top: 2%;">
+            <ion-item class="ion-no-padding">
+              <ion-icon style="font-size: medium;" name="at-outline" slot="end"></ion-icon>
+              <ion-text position="fixed">
+                Email
+              </ion-text>
+              <ion-input type="text" formControlName="email" class="ion-text-center" #Field2
+                (keyup.enter)="gotoNextField(Field3)">
+              </ion-input>
+            </ion-item>
+            <ion-item class="ion-no-padding">
+              <ion-icon style="font-size: medium;" name="lock-closed" slot="end"></ion-icon>
+              <ion-text position="fixed">
+                Senha
+              </ion-text>
+              <ion-input (keyup.enter)="logar()" type="password" formControlName="senha" #Field3 class="ion-text-center"
+                maxlength="18" (keyup.enter)="gotoNextField(Field4)"></ion-input>
+            </ion-item>
+            <ion-button style="--background: var(--ion-color-laranja-acafrao-tint);" #Field4 (click)="logar()" icon-left
+              size="small" expand="block" [disabled]="!loginForm.valid" mode="ios">
+              Login
+            </ion-button>
+            <ion-button (click)="cadastrar()" icon-left size="small" expand="block"
+              style="--background: var(--ion-color-laranja-acafrao-shade);" mode="ios">
+              Cadastrar-se
+            </ion-button>
+            <p (click)="esqueciMinhaSenha()" class="ion-text-center">Esqueci minha senha</p>
+          </form>
+        </div>
+      </div>
+
+      <div *ngIf="mostraTela === 'cadastra'">
+        <ion-toolbar>
+          <ion-buttons (click)="login()" slot="start">
+            <ion-button>
+              <ion-icon color="laranja" name="arrow-back-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+        <img [src]="logo" class="tamanhoLogo2 " *ngIf="logo !='data:image/png;base64,'">
+        <div class="inputTelaSite">
+          <form [formGroup]="loginForm" class="inputLogin2 ion-no-padding ajustaLogin">
+            <ion-item class="ion-no-padding">
+              <ion-text position="fixed" color="medium">
+                <ion-icon name="person" item-start></ion-icon>
+                Nome
+              </ion-text>
+              <ion-input (keyup.enter)="gotoNextField(Field11)" color="dark" formControlName="nome" #Field10
+                class="ion-text-center" maxlength="18">
+              </ion-input>
+            </ion-item>
+            <ion-item class="ion-no-padding">
+              <ion-text position="fixed" color="medium">
+                <ion-icon name="person" item-start></ion-icon>
+                Email
+              </ion-text>
+              <ion-input #Field11 color="dark" type="text" formControlName="email" class="ion-text-center" #Field2
+                (keyup.enter)="gotoNextField(Field12)" (ionChange)="validaEmail()">
+              </ion-input>
+            </ion-item>
+            <ion-item class="ion-no-padding">
+              <ion-text position="fixed" color="medium">
+                <ion-icon name="lock-closed" item-start></ion-icon>
+                Senha
+              </ion-text>
+              <ion-input #Field12 color="dark" type="password" formControlName="senha" class="ion-text-center"
+                maxlength="18" (keyup.enter)="salvarCadastro()" (keyup.enter)="gotoNextField(Field13)"></ion-input>
+            </ion-item>
+            <ion-button (click)="salvarCadastro()" icon-left size="small" expand="block"
+              style="--background: var(--ion-color-laranja-acafrao-shade);" mode="ios" #Field13>
+              Salvar
+            </ion-button>
+          </form>
+        </div>
+      </div>
+
+      <div *ngIf="mostraTela === 'esqueciSenha'">
+        <ion-toolbar>
+          <ion-buttons (click)="login()" slot="start">
+            <ion-button mode="ios">
+              <ion-icon color="laranja" name="arrow-back-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+        <!-- <ion-col> -->
+        <img [src]="logo" class="tamanhoLogo2" *ngIf="logo !='data:image/png;base64,'">
+        <div class="inputTelaSite">
+          <form [formGroup]="alteraForm" class="inputLogin2 ion-no-padding ajustaLogin">
+            <p class="ion-text-center">Digite seu email para enviar mais informacoes para a alteração de senha</p>
+            <ion-item class="ion-no-padding">
+              <ion-label position="floating" color="medium">
+                <ion-icon name="at-outline" item-start></ion-icon>
+                Email
+              </ion-label>
+              <ion-input (keyup.enter)="alterarLogin()" formControlName="emailAltera" #Field14 class="ion-text-center"
+                (keyup.enter)="gotoNextField(Field15)" color="dark">
+              </ion-input>
+            </ion-item>
+            <ion-button (click)="alterarLogin()" style="--background: var(--ion-color-laranja-acafrao-shade);" icon-left
+              size="small" expand="block" mode="ios" #Field15>
+              Enviar
+            </ion-button>
+          </form>
+        </div>
+        <!-- </ion-col> -->
+      </div>
+      <div *ngIf="mostraTela === 'codigoEmail'">
+        <ion-toolbar>
+          <ion-buttons (click)="login()" slot="start">
+            <ion-button mode="ios">
+              <ion-icon color="laranja" name="arrow-back-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+        <!-- <ion-col> -->
+        <img [src]="logo" class="tamanhoLogo2" *ngIf="logo !='data:image/png;base64,'">
+        <div class="inputTelaSite">
+          <form [formGroup]="alteraForm" class="inputLogin2 ion-no-padding ajustaLogin">
+            <p class="ion-text-center">Confirme o codigo de verificação enviado em seu
+              email</p>
+            <ion-row>
+              <ion-col size="12">
+                <ion-item class="ion-no-padding">
+                  <ion-label position="floating" color="medium">
+                    <ion-icon name="at-outline" item-start></ion-icon>
+                    Codigo
+                  </ion-label>
+                  <ion-input color="dark" formControlName="codValidacao" #Field16 class="ion-text-center"
+                    (keyup.enter)="salvarAlteracao()" (keyup.enter)="gotoNextField(Field17)" color="dark">
+                  </ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="10">
+                <ion-item class="ion-no-padding">
+                  <ion-label position="floating" color="medium">
+                    <ion-icon name="at-outline" item-start></ion-icon>
+                    Nova Senha
+                  </ion-label>
+                  <ion-input color="dark" formControlName="novaSenha" #Field16 class="ion-text-center"
+                    (keyup.enter)="gotoNextField(Field17)" [type]="mostraSenha" (ionInput)="validaConfirmacaoSenha()">
+                  </ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="2">
+                <ion-buttons (click)="visualizaSenha()">
+                  <ion-button>
+                    <ion-icon *ngIf="mostraSenha === 'password'" name="eye-outline"></ion-icon>
+                    <ion-icon *ngIf="mostraSenha === 'text'" name="eye-off-outline"></ion-icon>
+                  </ion-button>
+                </ion-buttons>
+              </ion-col>
+              <ion-col size="10">
+                <ion-item class="ion-no-padding">
+                  <ion-label position="floating" color="medium">
+                    <ion-icon name="at-outline" item-start></ion-icon>
+                    Confirmar Nova Senha
+                  </ion-label>
+                  <ion-input formControlName="confirmacaoSenha" #Field16 class="ion-text-center"
+                    (keyup.enter)="gotoNextField(Field17)" [type]="mostraConfirmaSenha"
+                    (ionInput)="validaConfirmacaoSenha()" [color]="validacao" color="dark">
+                  </ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="2">
+                <ion-buttons #Field2 (click)="visualizaSenhaConfirmacao()">
+                  <ion-button>
+                    <ion-icon *ngIf="mostraConfirmaSenha === 'password'" name="eye-outline"></ion-icon>
+                    <ion-icon *ngIf="mostraConfirmaSenha === 'text'" name="eye-off-outline"></ion-icon>
+                  </ion-button>
+                </ion-buttons>
+              </ion-col>
+            </ion-row>
+            <ion-button style="--background: var(--ion-color-laranja-acafrao-shade);" icon-left size="small"
+              expand="block" mode="ios" #Field17 (click)="salvarAlteracao()" [disabled]="!alteraForm.valid">
+              Enviar
+            </ion-button>
+          </form>
+        </div>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>

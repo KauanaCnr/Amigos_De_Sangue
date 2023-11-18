@@ -1,0 +1,8 @@
+{
+  "name": "amigos-de-sangue",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

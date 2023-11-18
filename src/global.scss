@@ -1,0 +1,141 @@
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+
+
+menu styling ion-menu {
+
+    ion-item,
+    ion-list,
+    .list-md,
+    ion-content {
+        --background: var(--ion-color-fundo);
+
+        --ion-background-color: var(--ion-color-fundo);
+    }
+
+    ion-item {
+        color: #ffffff;
+    }
+
+    ion-icon {
+        color: #ffffff;
+    }
+}
+
+ion-content {
+    ion-content {
+        --background: var(--ion-color-fundo);
+        --ion-background-color: var(--ion-color-fundo);
+    }
+}
+
+
+ion-toolbar {
+    --background: var(--ion-color-vermelho-menu);
+    --ion-background-color: var(--ion-color-vermelho-menu)F;
+}
+ion-footer {
+    --background: var(--ion-color-vermelho-menu);
+    --ion-background-color: var(--ion-color-vermelho-menu)F;
+}
+
+.tamanhoFonteDinamica {
+    @media (min-width: 1px) and (max-width: 400px) {
+        font-size: 12px !important;
+    }
+
+    @media (min-width: 401px) and (max-width: 500px) {
+        font-size: 13px !important;
+    }
+
+    @media (min-width: 501px) and (max-width: 800px) {
+        font-size: 14px !important;
+    }
+
+    @media (min-width: 801px) and (max-width: 1000px) {
+        font-size: 15px !important;
+    }
+
+    @media (min-width: 1001px) and (max-width: 1200px) {
+        font-size: 16px !important;
+    }
+
+    @media (min-width: 1201px) {
+        font-size: 17px !important;
+    }
+}
+
+.tamanhoFonteDinamicaTitulo {
+    @media (min-width: 1px) and (max-width: 400px) {
+        font-size: calc(14px + (14 - 15) * ((100vw - 400px) / (400 - 320)));
+    }
+
+    @media (min-width: 401px) and (max-width: 800px) {
+        font-size: calc(16px + (16 - 17) * ((100vw - 401px) / (800 - 401)));
+    }
+
+    @media (min-width: 801px) {
+        font-size: calc(17px + (17 - 18) * ((100vw - 801px) / (2000 - 801)));
+    }
+}
+
+.tamanhoFonteDinamicaInput {
+    @media (min-width: 1px) and (max-width: 400px) {
+        font-size: calc(12px + (13 - 12) * ((100vw - 400px) / (400 - 320)));
+    }
+
+    @media (min-width: 401px) {
+        font-size: calc(13px + (14 - 13) * ((100vw - 401px) / (1800 - 401)));
+    }
+}
+
+.tamanhoFonteDinamicaLabel {
+    @media (min-width: 1px) and (max-width: 400px) {
+        font-size: calc(9px + (10 - 9) * ((100vw - 400px) / (400 - 320)));
+    }
+
+    @media (min-width: 401px) and (max-width: 800px) {
+        font-size: calc(10px + (11 - 10) * ((100vw - 401px) / (800 - 401)));
+    }
+
+    @media (min-width: 801px) and (max-width: 1000px) {
+        font-size: calc(11px + (12 - 11) * ((100vw - 801px) / (1000 - 801)));
+    }
+
+    @media (min-width: 1001px) and (max-width: 1200px) {
+        font-size: calc(12px + (13 - 12) * ((100vw - 1001px) / (1200 - 1001)));
+    }
+
+    @media (min-width: 1201px) {
+        font-size: calc(13px + (14 - 13) * ((100vw - 1201px) / (1440 - 1201)));
+    }
+}
+
+.centralizarValoresColuna {
+    @media (min-width: 560px) {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.btn40 {
+    height: 40px;
+
+    @media (min-width: 560px) {
+        width: 235px;
+    }
+}
+
+.box {
+    border-color: #d7d8da;
+    border-width: thin;
+    border-style: solid;
+    border-radius: 8px;
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+}
