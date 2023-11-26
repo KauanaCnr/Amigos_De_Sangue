@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { usuario } from '.';
+import { usuario } from 'src/app/interface/usuario';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ConfigService {
 
-  cli: usuario = {
+  user: usuario = {
     COD: '',
     NOME: '',
     EMAIL: '',

@@ -4,15 +4,6 @@
 
 export const environment = {
   production: false,
-  // firebaseConfig: {
-  //   apiKey: "AIzaSyAmlu_XJHPsYry45HEAur_HGcA5tejPwDA",
-  //   authDomain: "amigos-de-sangue.firebaseapp.com",
-  //   projectId: "amigos-de-sangue",
-  //   storageBucket: "amigos-de-sangue.appspot.com",
-  //   messagingSenderId: "1069328049796",
-  //   appId: "1:1069328049796:web:0e21d8f1d44b01f18084d1",
-  //   measurementId: "G-C984K5YLGY"
-  // },
 };
 
 /*

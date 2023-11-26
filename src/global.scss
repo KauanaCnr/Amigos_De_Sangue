@@ -5,7 +5,7 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-
+@import "bootstrap/dist/css/bootstrap.min.css";
 
 menu styling ion-menu {
 
@@ -39,6 +39,7 @@ ion-toolbar {
     --background: var(--ion-color-vermelho-menu);
     --ion-background-color: var(--ion-color-vermelho-menu)F;
 }
+
 ion-footer {
     --background: var(--ion-color-vermelho-menu);
     --ion-background-color: var(--ion-color-vermelho-menu)F;
