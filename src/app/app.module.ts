@@ -20,7 +20,7 @@ import { AuthenticationService } from './servicos/auth/authentication.service';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgbModule.forRoot()
+    // NgModule.forRoot(),
   ],
 
   providers: [
