@@ -1,4 +1,4 @@
-import { File, IWriteOptions } from '@ionic-native/file/ngx';
+wwimport { File, IWriteOptions } from '@ionic-native/file/ngx';
 import { Injectable } from '@angular/core';
 import { AlertasService } from '../alertas/alertas.service';
 import { Observable } from 'rxjs';

@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
-import { LoadingController, AlertController, ToastController } from '@ionic/angular';
-import { Observable, retryWhen, delay, tap, map, throwError, catchError } from 'rxjs';
-import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpErrorResponse } from '@angular/common/http';
-import { Network } from '@ionic-native/network/ngx';
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Network } from "@ionic-native/network/ngx";
+import { LoadingController, AlertController, ToastController } from "@ionic/angular";
+import { Observable, throwError } from "rxjs";
+import { catchError, map, tap, delay, retryWhen } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -153,3 +154,5 @@ export class HttpConfigInterceptorService implements HttpInterceptor {
 
 
 }
+
+
