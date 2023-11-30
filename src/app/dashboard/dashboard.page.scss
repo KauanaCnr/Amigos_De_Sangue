@@ -1,0 +1,77 @@
+.swiper-pagination-bullet {
+    //   background-color: rgba(252, 137, 14, 0.932);
+    //   background-color: linear-gradient(red, yellow);
+}
+
+.texto-laranja {
+    //   background-color: linear-gradient(red, yellow);
+
+    //   color: rgba(252, 137, 14, 0.932);
+}
+
+.texto-azul {
+    color: black;
+}
+
+.fundo {
+    height: 100%;
+    background: var(--ion-color-fundo);
+
+    .confCard {
+        background-color: #083766;
+        border-radius: 2%;
+        color: white;
+        font-size: 65%;
+        height: 80%;
+    }
+}
+
+.btnSlideNext {
+    z-index: 2;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    // position: fixed;
+    //   margin-top: 130%;
+    //   margin-bottom: 30%;
+    // margin-left: 91%;
+}
+
+.btnSlideBack {
+    z-index: 3;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    // position: static;
+    //   padding-top: 80%;
+    //   margin-bottom: 10%;
+}
+
+.titulo {
+    flex-wrap: wrap;
+    font-size: 200%;
+    color: black;
+}
+
+.btnProximoAnterior {
+    border-radius: 20%;
+}
+
+.btnModulos {
+    --background: var(--ion-color-vermelho-logo);
+    width: 80%;
+    height: 100%;
+    margin: 2%;
+    flex-wrap: wrap;
+}
+
+.textBtn {
+    // font-size: 20%;
+    flex-wrap: wrap;
+    margin-top: 4%;
+    margin-bottom: 3%;
+}
+
+.colunaModulos {
+    margin-bottom: 3%;
+}

@@ -39,6 +39,7 @@ import { AuthenticationService } from './servicos/auth/authentication.service';
       multi: true
     },
     File,
+    Swiper,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
